@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var pencilCount = 0
+    @State var penCount = 0
     var body: some View {
-        PencilStack(title: "Ajouter un stylo")
-            .padding()
+        VStack {
+            PencilStack(title: "Ajouter un stylo", clickCount: $penCount)
+                .padding()
+            PencilStack(title: "Ajouter un crayon", clickCount: $pencilCount)
+                .padding()
+            Text("Nombre total d'éléments commandés : \(pencilCount + penCount)")
+        }
     }
 }
 
