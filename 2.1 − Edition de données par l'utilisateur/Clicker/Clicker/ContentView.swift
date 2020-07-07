@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var nickname = ""
     @State var score = 0
     @State var bestScore = 0
     @State var gameIsInProgress = false
     var body: some View {
         VStack {
+            EditableTextView(editedText: $nickname)
             HStack {
                 if score >= bestScore && score != 0 {
                     Image(systemName: "flame")

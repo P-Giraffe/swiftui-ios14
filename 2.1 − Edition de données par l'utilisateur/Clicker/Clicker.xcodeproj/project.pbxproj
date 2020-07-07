@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F84C3A4524B37717005A0C65 /* EditableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84C3A4424B37717005A0C65 /* EditableTextView.swift */; };
+		F827ABC424B47FD80012DB13 /* EditableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F827ABC324B47FD80012DB13 /* EditableTextView.swift */; };
 		F89FFE0024A3BAC3004E11AA /* ClickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89FFDFF24A3BAC3004E11AA /* ClickerApp.swift */; };
 		F89FFE0224A3BAC3004E11AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89FFE0124A3BAC3004E11AA /* ContentView.swift */; };
 		F89FFE0424A3BAC5004E11AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F89FFE0324A3BAC5004E11AA /* Assets.xcassets */; };
@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F84C3A4424B37717005A0C65 /* EditableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableTextView.swift; sourceTree = "<group>"; };
+		F827ABC324B47FD80012DB13 /* EditableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableTextView.swift; sourceTree = "<group>"; };
 		F89FFDFC24A3BAC3004E11AA /* Clicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F89FFDFF24A3BAC3004E11AA /* ClickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickerApp.swift; sourceTree = "<group>"; };
 		F89FFE0124A3BAC3004E11AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 				F89FFE0324A3BAC5004E11AA /* Assets.xcassets */,
 				F89FFE0824A3BAC5004E11AA /* Info.plist */,
 				F89FFE0524A3BAC5004E11AA /* Preview Content */,
-				F84C3A4424B37717005A0C65 /* EditableTextView.swift */,
+				F827ABC324B47FD80012DB13 /* EditableTextView.swift */,
 			);
 			path = Clicker;
 			sourceTree = "<group>";
@@ -141,7 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F84C3A4524B37717005A0C65 /* EditableTextView.swift in Sources */,
+				F827ABC424B47FD80012DB13 /* EditableTextView.swift in Sources */,
 				F89FFE0224A3BAC3004E11AA /* ContentView.swift in Sources */,
 				F89FFE0024A3BAC3004E11AA /* ClickerApp.swift in Sources */,
 			);

@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct EditableTextView: View {
+    @Binding var editedText:String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(editedText)
     }
 }
 
 struct EditableTextView_Previews: PreviewProvider {
     static var previews: some View {
-        EditableTextView()
+        EditableTextView(editedText: .constant("Leonard"))
     }
 }
