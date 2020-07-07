@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        PencilStack()
+        PencilStack(title: "Ajouter un stylo")
             .padding()
     }
 }
