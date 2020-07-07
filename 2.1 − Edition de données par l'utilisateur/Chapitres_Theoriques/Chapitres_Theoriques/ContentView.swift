@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Image(systemName: "pencil.tip.crop.circle.badge.plus").padding()
+        PencilStack()
+            .padding()
     }
 }
 
