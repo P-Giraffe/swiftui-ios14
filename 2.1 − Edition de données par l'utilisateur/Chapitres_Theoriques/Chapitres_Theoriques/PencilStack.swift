@@ -27,6 +27,12 @@ struct PencilStack: View {
 
 struct PencilStack_Previews: PreviewProvider {
     static var previews: some View {
-        PencilStack(title: "Ajouter un crayon", clickCount: .constant(5))
+        Group {
+            PencilStack(title: "Ajouter un stylo", clickCount: .constant(5))
+                .previewLayout(.sizeThatFits)
+            PencilStack(title: "Ajouter un crayon", clickCount: .constant(5))
+                .preferredColorScheme(.dark)
+                .previewLayout(.sizeThatFits)
+        }
     }
 }
