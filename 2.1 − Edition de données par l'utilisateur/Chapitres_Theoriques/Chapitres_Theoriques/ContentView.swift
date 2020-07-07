@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var orderName = ""
+    @AppStorage("orderName") var orderName = ""
     @State var pencilCount = 0
     @State var penCount = 0
     var body: some View {
