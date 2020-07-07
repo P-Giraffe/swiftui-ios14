@@ -16,7 +16,7 @@ struct EditableTextView: View {
             if isEditing == true {
                 TextField(title, text: $editedText)
                     .frame(width: 300.0)
-                    .border(Color.gray, width: 1)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
             } else {
                 Text(editedText)
                     .frame(width: 300.0)
