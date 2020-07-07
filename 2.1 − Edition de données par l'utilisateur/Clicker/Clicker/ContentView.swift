@@ -10,7 +10,8 @@ import SwiftUI
 struct ContentView: View {
     @AppStorage("nickname") var nickname = "Sheldon"
     @State var score = 0
-    @State var bestScore = 0
+    @AppStorage("bestScore") var bestScore = 0
+    @AppStorage("bestNickname") var bestNickname = ""
     @State var gameIsInProgress = false
     var body: some View {
         VStack {
@@ -22,6 +23,13 @@ struct ContentView: View {
                 Text("Score : \(score)")
                     .padding()
             }.font(.title)
+            if bestScore > 0 {
+                HStack {
+                    Image(systemName: "star")
+                    Text("\(bestNickname) - \(bestScore)")
+                    Image(systemName: "star")
+                }
+            }
             if gameIsInProgress == true {
                 Image(systemName: "plus.square")
                     .font(.title)
@@ -29,6 +37,7 @@ struct ContentView: View {
                         score = score + 1
                     }
             }
+            
             Spacer()
             if gameIsInProgress == false {
                 Button("Nouvelle partie") {
@@ -38,6 +47,7 @@ struct ContentView: View {
                         gameIsInProgress = false
                         if score > bestScore {
                             bestScore = score
+                            bestNickname = nickname
                         }
                     }
                 }.padding()
