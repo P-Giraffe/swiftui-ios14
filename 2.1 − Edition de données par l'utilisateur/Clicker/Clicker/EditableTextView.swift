@@ -14,8 +14,11 @@ struct EditableTextView: View {
         HStack {
             if isEditing == true {
                 TextField("Pseudo", text: $editedText)
+                    .frame(width: 300.0)
+                    .border(Color.gray, width: 1)
             } else {
                 Text(editedText)
+                    .frame(width: 300.0)
             }
             Image(systemName: "pencil.circle")
                 .onTapGesture {
