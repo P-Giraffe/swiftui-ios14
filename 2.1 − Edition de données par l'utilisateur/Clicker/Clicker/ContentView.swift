@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var nickname = ""
+    @State var nickname = "Sheldon"
     @State var score = 0
     @State var bestScore = 0
     @State var gameIsInProgress = false
