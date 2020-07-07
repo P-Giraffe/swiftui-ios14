@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct EditableTextView: View {
-    @State var isEditing = false
+    let title:String
+    @State private var isEditing = false
     @Binding var editedText:String
     var body: some View {
         HStack {
             if isEditing == true {
-                TextField("Pseudo", text: $editedText)
+                TextField(title, text: $editedText)
                     .frame(width: 300.0)
                     .border(Color.gray, width: 1)
             } else {
@@ -30,7 +31,7 @@ struct EditableTextView: View {
 
 struct EditableTextView_Previews: PreviewProvider {
     static var previews: some View {
-        EditableTextView(editedText: .constant("Leonard"))
+        EditableTextView(title: "Pseudo", editedText: .constant("Leonard"))
             .previewLayout(.sizeThatFits)
     }
 }

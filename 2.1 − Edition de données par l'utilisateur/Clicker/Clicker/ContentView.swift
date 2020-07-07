@@ -14,7 +14,7 @@ struct ContentView: View {
     @State var gameIsInProgress = false
     var body: some View {
         VStack {
-            EditableTextView(editedText: $nickname)
+            EditableTextView(title: "Pseudo", editedText: $nickname)
             HStack {
                 if score >= bestScore && score != 0 {
                     Image(systemName: "flame")
