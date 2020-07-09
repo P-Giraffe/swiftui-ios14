@@ -13,6 +13,7 @@
 		F89FFE0424A3BAC5004E11AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F89FFE0324A3BAC5004E11AA /* Assets.xcassets */; };
 		F89FFE0724A3BAC5004E11AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F89FFE0624A3BAC5004E11AA /* Preview Assets.xcassets */; };
 		F8A5AA8A24B70EBF00D8C33C /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A5AA8924B70EBF00D8C33C /* GameResult.swift */; };
+		F8A5AA8C24B7121800D8C33C /* GameResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A5AA8B24B7121800D8C33C /* GameResultListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F89FFE0624A3BAC5004E11AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F89FFE0824A3BAC5004E11AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8A5AA8924B70EBF00D8C33C /* GameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
+		F8A5AA8B24B7121800D8C33C /* GameResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				F89FFE0524A3BAC5004E11AA /* Preview Content */,
 				F827ABC324B47FD80012DB13 /* EditableTextView.swift */,
 				F8A5AA8924B70EBF00D8C33C /* GameResult.swift */,
+				F8A5AA8B24B7121800D8C33C /* GameResultListView.swift */,
 			);
 			path = Clicker;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A5AA8C24B7121800D8C33C /* GameResultListView.swift in Sources */,
 				F8A5AA8A24B70EBF00D8C33C /* GameResult.swift in Sources */,
 				F827ABC424B47FD80012DB13 /* EditableTextView.swift in Sources */,
 				F89FFE0224A3BAC3004E11AA /* ContentView.swift in Sources */,

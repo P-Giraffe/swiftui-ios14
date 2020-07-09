@@ -39,7 +39,7 @@ struct ContentView: View {
                         userTouchedClickButton()
                     }
             }
-            
+            GameResultListView(resultList: resultList)
             Spacer()
             if gameIsInProgress == false {
                 Button("Nouvelle partie") {
