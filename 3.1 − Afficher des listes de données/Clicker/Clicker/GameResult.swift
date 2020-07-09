@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct GameResult {
+struct GameResult : Identifiable {
+    let id = UUID()
     let playerName:String
     let score:Int
 }
