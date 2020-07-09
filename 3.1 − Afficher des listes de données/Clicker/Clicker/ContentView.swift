@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @AppStorage("nickname") var nickname = "Sheldon"
     @State var score = 0
+    @State var resultList:[GameResult] = []
+    
+    @AppStorage("nickname") var nickname = "Sheldon"
     @AppStorage("bestScore") var bestScore = 0
     @AppStorage("bestNickname") var bestNickname = ""
     @State var gameIsInProgress = false
@@ -65,7 +67,8 @@ struct ContentView: View {
             bestScore = score
             bestNickname = nickname
         }
-        
+        let result = GameResult(playerName: nickname, score: score)
+        resultList.append(result)
     }
 }
 
