@@ -19,5 +19,8 @@ class GameManager : ObservableObject {
         }
         let result = GameResult(playerName: username, score: score)
         resultList.append(result)
+        resultList.sort { (result1, result2) -> Bool in
+            result1.score > result2.score
+        }
     }
 }

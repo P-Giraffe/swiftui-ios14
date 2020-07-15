@@ -27,7 +27,7 @@ struct GameView: View {
             if gameManager.bestScore > 0 {
                 HStack {
                     Image(systemName: "star")
-                    Text("\(gameManager.bestNickname) - \(gameManager.bestScore)")
+                    Text("Hall of fame")
                     Image(systemName: "star")
                 }
             }
