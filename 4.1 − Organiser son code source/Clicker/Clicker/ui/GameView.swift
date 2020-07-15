@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct GameView: View {
-    @State var score = 0
-    @State var resultList:[GameResult] = []
-    
     @AppStorage("nickname") var nickname = "Sheldon"
-    @AppStorage("bestScore") var bestScore = 0
-    @AppStorage("bestNickname") var bestNickname = ""
+    @State var score = 0
     @State var gameIsInProgress = false
+    
+    
+    
     var body: some View {
         VStack {
             EditableTextView(title: "Pseudo", editedText: $nickname)

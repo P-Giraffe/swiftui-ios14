@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F81E7F1D24BF4FC200B6E1D9 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81E7F1C24BF4FC200B6E1D9 /* GameManager.swift */; };
 		F827ABC424B47FD80012DB13 /* EditableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F827ABC324B47FD80012DB13 /* EditableTextView.swift */; };
 		F89FFE0024A3BAC3004E11AA /* ClickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89FFDFF24A3BAC3004E11AA /* ClickerApp.swift */; };
 		F89FFE0224A3BAC3004E11AA /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89FFE0124A3BAC3004E11AA /* GameView.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F81E7F1C24BF4FC200B6E1D9 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		F827ABC324B47FD80012DB13 /* EditableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableTextView.swift; sourceTree = "<group>"; };
 		F89FFDFC24A3BAC3004E11AA /* Clicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F89FFDFF24A3BAC3004E11AA /* ClickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickerApp.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				F8A5AA8924B70EBF00D8C33C /* GameResult.swift */,
+				F81E7F1C24BF4FC200B6E1D9 /* GameManager.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8A5AA8C24B7121800D8C33C /* GameResultListView.swift in Sources */,
+				F81E7F1D24BF4FC200B6E1D9 /* GameManager.swift in Sources */,
 				F8A5AA8A24B70EBF00D8C33C /* GameResult.swift in Sources */,
 				F827ABC424B47FD80012DB13 /* EditableTextView.swift in Sources */,
 				F89FFE0224A3BAC3004E11AA /* GameView.swift in Sources */,
