@@ -9,15 +9,11 @@ import Foundation
 
 class GameManager : ObservableObject {
     @Published var resultList:[GameResult] = []
-    @Published var bestScore = 0
-    @Published var bestNickname = ""
+    var bestGame: GameResult? { resultList.first }
     
     func gameDidFinish(username:String, score:Int) {
-        if score > bestScore {
-            bestScore = score
-            bestNickname = username
-        }
         let result = GameResult(playerName: username, score: score)
+        objectWillChange.send()
         resultList.append(result)
         resultList.sort { (result1, result2) -> Bool in
             result1.score > result2.score

@@ -14,29 +14,35 @@ struct GameView: View {
     
     @StateObject var gameManager = GameManager()
     
+    var isOnFire: Bool {
+        guard let bestScore = gameManager.bestGame?.score else { return false }
+        return score > bestScore
+    }
+    
     var body: some View {
         VStack {
             EditableTextView(title: "Pseudo", editedText: $nickname)
             HStack {
-                if score >= gameManager.bestScore && score != 0 {
+                if isOnFire {
                     Image(systemName: "flame")
                 }
                 Text("Score : \(score)")
                     .padding()
             }.font(.title)
-            if gameManager.bestScore > 0 {
-                HStack {
-                    Image(systemName: "star")
-                    Text("Hall of fame")
-                    Image(systemName: "star")
-                }
-            }
+            
             if gameIsInProgress == true {
                 Image(systemName: "plus.square")
                     .font(.title)
                     .onTapGesture {
                         userTouchedClickButton()
                     }
+            }
+            if gameManager.resultList.count > 0 {
+                HStack {
+                    Image(systemName: "star")
+                    Text("Hall of fame")
+                    Image(systemName: "star")
+                }
             }
             GameResultListView(resultList: gameManager.resultList)
             Spacer()
