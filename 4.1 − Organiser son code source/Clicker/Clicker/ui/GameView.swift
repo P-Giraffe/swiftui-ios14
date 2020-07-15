@@ -12,22 +12,22 @@ struct GameView: View {
     @State var score = 0
     @State var gameIsInProgress = false
     
-    
+    @StateObject var gameManager = GameManager()
     
     var body: some View {
         VStack {
             EditableTextView(title: "Pseudo", editedText: $nickname)
             HStack {
-                if score >= bestScore && score != 0 {
+                if score >= gameManager.bestScore && score != 0 {
                     Image(systemName: "flame")
                 }
                 Text("Score : \(score)")
                     .padding()
             }.font(.title)
-            if bestScore > 0 {
+            if gameManager.bestScore > 0 {
                 HStack {
                     Image(systemName: "star")
-                    Text("\(bestNickname) - \(bestScore)")
+                    Text("\(gameManager.bestNickname) - \(gameManager.bestScore)")
                     Image(systemName: "star")
                 }
             }
@@ -38,7 +38,7 @@ struct GameView: View {
                         userTouchedClickButton()
                     }
             }
-            GameResultListView(resultList: resultList)
+            GameResultListView(resultList: gameManager.resultList)
             Spacer()
             if gameIsInProgress == false {
                 Button("Nouvelle partie") {
@@ -62,12 +62,7 @@ struct GameView: View {
     
     func gameDidFinish() {
         gameIsInProgress = false
-        if score > bestScore {
-            bestScore = score
-            bestNickname = nickname
-        }
-        let result = GameResult(playerName: nickname, score: score)
-        resultList.append(result)
+        gameManager.gameDidFinish(username: nickname, score: score)
     }
 }
 
