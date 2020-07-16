@@ -63,7 +63,9 @@ struct GameView: View {
     }
     
     func userTouchedClickButton() {
-        score = score + 1
+        if gameIsInProgress {
+            score = score + 1
+        }
     }
     
     func gameDidFinish() {
