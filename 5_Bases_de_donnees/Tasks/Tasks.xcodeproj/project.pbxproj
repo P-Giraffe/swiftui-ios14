@@ -12,6 +12,9 @@
 		F832BC9124C8960F00692DCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F832BC9024C8960F00692DCA /* Assets.xcassets */; };
 		F832BC9424C8960F00692DCA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F832BC9324C8960F00692DCA /* Preview Assets.xcassets */; };
 		F832BC9C24C8964E00692DCA /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F832BC9B24C8964E00692DCA /* TaskCell.swift */; };
+		F85A097424C8F953008D92F8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A097324C8F953008D92F8 /* Task.swift */; };
+		F85A097C24C8FF59008D92F8 /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A097B24C8FF59008D92F8 /* TaskManager.swift */; };
+		F85A097E24C8FF9C008D92F8 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A097D24C8FF9C008D92F8 /* CoreDataStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		F832BC9324C8960F00692DCA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F832BC9524C8960F00692DCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F832BC9B24C8964E00692DCA /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		F85A097324C8F953008D92F8 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		F85A097B24C8FF59008D92F8 /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
+		F85A097D24C8FF9C008D92F8 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +60,12 @@
 		F832BC8B24C8960D00692DCA /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				F85A097224C8F938008D92F8 /* Data */,
+				F8B6FB5224C8F3C1008182CE /* UI */,
 				F832BC8C24C8960D00692DCA /* TasksApp.swift */,
-				F832BC8E24C8960D00692DCA /* TaskListView.swift */,
 				F832BC9024C8960F00692DCA /* Assets.xcassets */,
 				F832BC9524C8960F00692DCA /* Info.plist */,
 				F832BC9224C8960F00692DCA /* Preview Content */,
-				F832BC9B24C8964E00692DCA /* TaskCell.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -70,6 +76,41 @@
 				F832BC9324C8960F00692DCA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F85A097224C8F938008D92F8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F85A097624C8FC80008D92F8 /* Storage */,
+				F85A097524C8FC78008D92F8 /* Management */,
+				F85A097324C8F953008D92F8 /* Task.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F85A097524C8FC78008D92F8 /* Management */ = {
+			isa = PBXGroup;
+			children = (
+				F85A097B24C8FF59008D92F8 /* TaskManager.swift */,
+			);
+			path = Management;
+			sourceTree = "<group>";
+		};
+		F85A097624C8FC80008D92F8 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				F85A097D24C8FF9C008D92F8 /* CoreDataStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		F8B6FB5224C8F3C1008182CE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F832BC8E24C8960D00692DCA /* TaskListView.swift */,
+				F832BC9B24C8964E00692DCA /* TaskCell.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +182,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F85A097E24C8FF9C008D92F8 /* CoreDataStorage.swift in Sources */,
+				F85A097424C8F953008D92F8 /* Task.swift in Sources */,
 				F832BC8F24C8960D00692DCA /* TaskListView.swift in Sources */,
+				F85A097C24C8FF59008D92F8 /* TaskManager.swift in Sources */,
 				F832BC9C24C8964E00692DCA /* TaskCell.swift in Sources */,
 				F832BC8D24C8960D00692DCA /* TasksApp.swift in Sources */,
 			);

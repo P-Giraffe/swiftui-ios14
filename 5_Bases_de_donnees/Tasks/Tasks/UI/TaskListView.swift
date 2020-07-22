@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TaskListView: View {
     @State var newTaskName:String = ""
+    @State var taskManager = TaskManager()
     @State var taskList = [
         Task(name:"Terminer cours SwiftUI"),
         Task(name:"Préparer prochain défi Purple Giraffe"),
@@ -48,12 +49,6 @@ struct TaskListView: View {
             taskList[taskIndex].isDone.toggle()
         }
     }
-}
-
-struct Task : Identifiable {
-    let id = UUID()
-    let name : String
-    var isDone = false
 }
 
 struct ContentView_Previews: PreviewProvider {
