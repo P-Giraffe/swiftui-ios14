@@ -15,6 +15,7 @@
 		F85A097424C8F953008D92F8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A097324C8F953008D92F8 /* Task.swift */; };
 		F85A097C24C8FF59008D92F8 /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A097B24C8FF59008D92F8 /* TaskManager.swift */; };
 		F85A097E24C8FF9C008D92F8 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A097D24C8FF9C008D92F8 /* CoreDataStorage.swift */; };
+		F85A098124C90308008D92F8 /* Tasks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F85A097F24C90308008D92F8 /* Tasks.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F85A097324C8F953008D92F8 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		F85A097B24C8FF59008D92F8 /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 		F85A097D24C8FF9C008D92F8 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		F85A098024C90308008D92F8 /* Tasks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tasks.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				F85A097D24C8FF9C008D92F8 /* CoreDataStorage.swift */,
+				F85A097F24C90308008D92F8 /* Tasks.xcdatamodeld */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F85A097E24C8FF9C008D92F8 /* CoreDataStorage.swift in Sources */,
+				F85A098124C90308008D92F8 /* Tasks.xcdatamodeld in Sources */,
 				F85A097424C8F953008D92F8 /* Task.swift in Sources */,
 				F832BC8F24C8960D00692DCA /* TaskListView.swift in Sources */,
 				F85A097C24C8FF59008D92F8 /* TaskManager.swift in Sources */,
@@ -376,6 +380,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F85A097F24C90308008D92F8 /* Tasks.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F85A098024C90308008D92F8 /* Tasks.xcdatamodel */,
+			);
+			currentVersion = F85A098024C90308008D92F8 /* Tasks.xcdatamodel */;
+			path = Tasks.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F832BC8124C8960D00692DCA /* Project object */;
 }
