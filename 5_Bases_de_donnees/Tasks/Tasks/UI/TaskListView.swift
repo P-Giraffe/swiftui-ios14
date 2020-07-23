@@ -10,10 +10,6 @@ import SwiftUI
 struct TaskListView: View {
     @State var newTaskName:String = ""
     @State var taskManager = TaskManager()
-//    @State var taskList = [
-//        Task(name:"Terminer cours SwiftUI"),
-//        Task(name:"Préparer prochain défi Purple Giraffe"),
-//        Task(name:"Commencer le cours secret")]
     var body: some View {
         VStack {
             HStack {
@@ -45,10 +41,7 @@ struct TaskListView: View {
     }
     
     func userTappedTask(_ task:Task) {
-        taskManager.toggleTaskStatus(task: task)
-//        if let taskIndex = taskList.firstIndex(where: { (t) -> Bool in t.id == task.id }) {
-//            taskList[taskIndex].isDone.toggle()
-//        }
+        taskManager.toggleTaskStatus(withId: task.id)
     }
 }
 
