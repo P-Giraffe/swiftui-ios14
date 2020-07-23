@@ -14,4 +14,12 @@ struct TaskManager {
     init() {
         taskList = storage.fetchTaskList()
     }
+    
+    @discardableResult
+    mutating func addTask(withName taskName:String) -> Task {
+        let newTask = Task(name: taskName)
+        taskList.append(newTask)
+        storage.addNewTask(task: newTask)
+        return newTask
+    }
 }
