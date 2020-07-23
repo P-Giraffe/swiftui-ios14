@@ -46,7 +46,11 @@ class CoreDataStorage {
     }
     
     func updateTask(task:Task) {
-        
+        if let existingTask = fetchCDTask(withId: task.id) {
+            existingTask.name = task.name
+            existingTask.isDone = task.isDone
+            saveData()
+        }
     }
     
     private func fetchCDTask(withId taskId:UUID) -> CDTask? {
