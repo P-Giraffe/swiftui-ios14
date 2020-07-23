@@ -36,6 +36,24 @@ class CoreDataStorage {
         }
         return taskList
     }
+    
+    func addNewTask(task:Task) {
+        let newTask = CDTask(context: context)
+        newTask.id = task.id
+        newTask.name = task.name
+        newTask.isDone = task.isDone
+        saveData()
+    }
+    
+    private func saveData() {
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                print("Erreur pendant la sauvegarde CoreData : \(error.localizedDescription)")
+            }
+        }
+    }
 }
 
 extension Task {
