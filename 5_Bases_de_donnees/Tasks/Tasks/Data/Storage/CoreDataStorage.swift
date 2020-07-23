@@ -45,6 +45,18 @@ class CoreDataStorage {
         saveData()
     }
     
+    func updateTask(task:Task) {
+        
+    }
+    
+    private func fetchCDTask(withId taskId:UUID) -> CDTask? {
+        let fetchRequest:NSFetchRequest<CDTask> = CDTask.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", taskId as CVarArg)
+        fetchRequest.fetchLimit = 1
+        let fetchResult:[CDTask]? = try? context.fetch(fetchRequest)
+        return fetchResult?.first
+    }
+    
     private func saveData() {
         if context.hasChanges {
             do {
