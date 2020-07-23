@@ -25,6 +25,27 @@ class CoreDataStorage {
     }
     
     func fetchTaskList() -> [Task] {
-        return []
+        let taskList:[Task]
+        let fetchRequest:NSFetchRequest<CDTask> = CDTask.fetchRequest()
+        if let rawTaskList = try? context.fetch(fetchRequest) {
+            taskList = rawTaskList.compactMap({ (rawTask:CDTask) -> Task? in
+                Task(fromCoreDataObject: rawTask)
+            })
+        } else {
+            taskList = []
+        }
+        return taskList
+    }
+}
+
+extension Task {
+    init?(fromCoreDataObject coreDataObject:CDTask) {
+        guard let id = coreDataObject.id,
+              let name = coreDataObject.name else {
+            return nil
+        }
+        self.id = id
+        self.name = name
+        self.isDone = coreDataObject.isDone
     }
 }
