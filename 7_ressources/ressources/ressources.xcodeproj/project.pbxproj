@@ -3,14 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8731B54251CAAB800096508 /* DynamicColor in Frameworks */ = {isa = PBXBuildFile; productRef = F8731B53251CAAB800096508 /* DynamicColor */; };
 		F8B189112512420000DA2BA3 /* ressourcesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B189102512420000DA2BA3 /* ressourcesApp.swift */; };
 		F8B189132512420000DA2BA3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B189122512420000DA2BA3 /* ContentView.swift */; };
 		F8B189152512420200DA2BA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B189142512420200DA2BA3 /* Assets.xcassets */; };
 		F8B189182512420200DA2BA3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B189172512420200DA2BA3 /* Preview Assets.xcassets */; };
+		F8F80657251CC84600F749CF /* Res.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F80656251CC84600F749CF /* Res.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,7 @@
 		F8B189142512420200DA2BA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8B189172512420200DA2BA3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F8B189192512420200DA2BA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8F80656251CC84600F749CF /* Res.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Res.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8731B54251CAAB800096508 /* DynamicColor in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +61,7 @@
 				F8B189142512420200DA2BA3 /* Assets.xcassets */,
 				F8B189192512420200DA2BA3 /* Info.plist */,
 				F8B189162512420200DA2BA3 /* Preview Content */,
+				F8F80656251CC84600F749CF /* Res.swift */,
 			);
 			path = ressources;
 			sourceTree = "<group>";
@@ -85,6 +90,9 @@
 			dependencies = (
 			);
 			name = ressources;
+			packageProductDependencies = (
+				F8731B53251CAAB800096508 /* DynamicColor */,
+			);
 			productName = ressources;
 			productReference = F8B1890D2512420000DA2BA3 /* ressources.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +120,9 @@
 				Base,
 			);
 			mainGroup = F8B189042512420000DA2BA3;
+			packageReferences = (
+				F8731B52251CAAB800096508 /* XCRemoteSwiftPackageReference "DynamicColor" */,
+			);
 			productRefGroup = F8B1890E2512420000DA2BA3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,6 +151,7 @@
 			files = (
 				F8B189132512420000DA2BA3 /* ContentView.swift in Sources */,
 				F8B189112512420000DA2BA3 /* ressourcesApp.swift in Sources */,
+				F8F80657251CC84600F749CF /* Res.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +340,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F8731B52251CAAB800096508 /* XCRemoteSwiftPackageReference "DynamicColor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yannickl/DynamicColor.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F8731B53251CAAB800096508 /* DynamicColor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8731B52251CAAB800096508 /* XCRemoteSwiftPackageReference "DynamicColor" */;
+			productName = DynamicColor;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F8B189052512420000DA2BA3 /* Project object */;
 }

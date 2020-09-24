@@ -6,13 +6,26 @@
 //
 
 import SwiftUI
+import DynamicColor
 
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image("hall_fame")
+            Res.Images.hallOfFame.image
             Text("Hello, world!")
                 .padding()
+                .foregroundColor(Color.primary)
+            Text("Purple Giraffe")
+                .padding()
+                .foregroundColor(Color.accentColor)
+            Button("Effacer") {
+                
+            }.foregroundColor(Res.Colors.danger.color)
+            if let url = URL(string: "https://www.purplegiraffe.fr") {
+                Link("Ouvrir le site", destination: url)
+                    .foregroundColor(Color(hex: 0x3498db))
+            }
+            
         }
     }
 }
