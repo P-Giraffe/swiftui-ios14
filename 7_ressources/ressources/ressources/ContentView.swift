@@ -9,20 +9,22 @@ import SwiftUI
 import DynamicColor
 
 struct ContentView: View {
+    @State var score = 0
+    @State var nickname = "Sheldon"
     var body: some View {
         VStack {
             Res.Images.hallOfFame.image
-            Text("Hello, world!")
+            Text("Hello \(nickname), here is your score : \(score)!")
                 .padding()
                 .foregroundColor(Color.primary)
             Text("Purple Giraffe")
                 .padding()
                 .foregroundColor(Color.accentColor)
-            Button("Effacer") {
+            Button(NSLocalizedString("Clear", comment: "Button title to remove data") ) {
                 
             }.foregroundColor(Res.Colors.danger.color)
             if let url = URL(string: "https://www.purplegiraffe.fr") {
-                Link("Ouvrir le site", destination: url)
+                Link(NSLocalizedString("Open website", comment: ""), destination: url)
                     .foregroundColor(Color(hex: 0x3498db))
             }
             

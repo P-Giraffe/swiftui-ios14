@@ -1,11 +1,61 @@
 {
   "images" : [
     {
-      "filename" : "hall_fame@1x.png",
+      "idiom" : "universal",
+      "filename" : "hall_fame_en@1x.png",
+      "scale" : "1x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "hall_fame_dark_en@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "idiom" : "universal",
+      "filename" : "hall_fame_en@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "hall_fame_dark_en@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "hall_fame_en@3x.png",
+      "scale" : "3x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "hall_fame_dark_en@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    },
+    {
+      "locale" : "fr",
+      "idiom" : "universal",
+      "filename" : "hall_fame_en@1x_fr.png",
+      "scale" : "1x"
+    },
+    {
+      "locale" : "fr",
       "appearances" : [
         {
           "appearance" : "luminosity",
@@ -17,11 +67,13 @@
       "scale" : "1x"
     },
     {
-      "filename" : "hall_fame@2x.png",
+      "locale" : "fr",
       "idiom" : "universal",
+      "filename" : "hall_fame_en@2x_fr.png",
       "scale" : "2x"
     },
     {
+      "locale" : "fr",
       "appearances" : [
         {
           "appearance" : "luminosity",
@@ -33,11 +85,13 @@
       "scale" : "2x"
     },
     {
-      "filename" : "hall_fame@3x.png",
+      "locale" : "fr",
       "idiom" : "universal",
+      "filename" : "hall_fame_en@3x_fr.png",
       "scale" : "3x"
     },
     {
+      "locale" : "fr",
       "appearances" : [
         {
           "appearance" : "luminosity",
@@ -50,7 +104,10 @@
     }
   ],
   "info" : {
-    "author" : "xcode",
-    "version" : 1
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "properties" : {
+    "localizable" : true
   }
 }
