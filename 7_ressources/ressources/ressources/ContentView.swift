@@ -9,14 +9,17 @@ import SwiftUI
 import DynamicColor
 
 struct ContentView: View {
-    @State var score = 0
+    @State var score = 1
     @State var nickname = "Sheldon"
     var body: some View {
         VStack {
             Res.Images.hallOfFame.image
-            Text("Hello \(nickname), here is your score : \(score)!")
+            Text(String.localizedStringWithFormat(NSLocalizedString("Hello %@ score :%lld!", comment: ""), nickname, score))
                 .padding()
                 .foregroundColor(Color.primary)
+            
+            Text(String.localizedStringWithFormat(NSLocalizedString("%d points", comment: "gestion du pluriel ne pas traduire"), score))
+            
             Text("Purple Giraffe")
                 .padding()
                 .foregroundColor(Color.accentColor)
@@ -36,6 +39,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
+                .environment(\.locale, .init(identifier:"fr"))
             ContentView()
                 .preferredColorScheme(.dark)
         }
