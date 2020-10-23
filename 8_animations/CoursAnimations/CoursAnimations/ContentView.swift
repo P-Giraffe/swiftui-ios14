@@ -33,6 +33,11 @@ struct ContentView: View {
                     .padding()
                     .transition(.moveWithOpacity)
             }
+            Image(systemName: "trash")
+                .imageScale(.large)
+                .rotationEffect(.degrees(60))
+                .scaleEffect(2.0)
+                .padding()
         }
     }
 }
