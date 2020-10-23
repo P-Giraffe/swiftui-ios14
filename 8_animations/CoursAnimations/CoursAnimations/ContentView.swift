@@ -20,7 +20,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Button(action : {
-                withAnimation {
+                withAnimation(.easeInOut(duration: 4)) {
                     montrerLeTexte.toggle()
                 }
             },
@@ -35,8 +35,8 @@ struct ContentView: View {
             }
             Image(systemName: "trash")
                 .imageScale(.large)
-                .rotationEffect(.degrees(60))
-                .scaleEffect(2.0)
+                .rotationEffect(.degrees(montrerLeTexte == true ? 60 : 0))
+                .scaleEffect(montrerLeTexte ? 3.0 : 1.2)
                 .padding()
         }
     }
