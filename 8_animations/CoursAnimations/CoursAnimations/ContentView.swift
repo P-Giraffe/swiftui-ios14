@@ -12,7 +12,9 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Button(action : {
-                montrerLeTexte.toggle()
+                withAnimation {
+                    montrerLeTexte.toggle()
+                }
             },
             label: {
                 Image(systemName: montrerLeTexte ? "eye.slash" : "eye")
@@ -21,6 +23,7 @@ struct ContentView: View {
             if montrerLeTexte {
                 Text("J'adoooooore Purple Giraffe <3")
                     .padding()
+                    .transition(.move(edge: .bottom))
             }
         }
     }
