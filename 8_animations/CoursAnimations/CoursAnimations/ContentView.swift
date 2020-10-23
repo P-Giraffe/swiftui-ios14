@@ -7,6 +7,14 @@
 
 import SwiftUI
 
+extension AnyTransition {
+    static var moveWithOpacity:AnyTransition {
+        let moveIn = AnyTransition.move(edge: .bottom).combined(with: .opacity)
+        let moveOut = AnyTransition.move(edge: .trailing).combined(with: .opacity)
+        return AnyTransition.asymmetric(insertion: moveIn, removal: moveOut)
+    }
+}
+
 struct ContentView: View {
     @State var montrerLeTexte = false
     var body: some View {
@@ -23,7 +31,7 @@ struct ContentView: View {
             if montrerLeTexte {
                 Text("J'adoooooore Purple Giraffe <3")
                     .padding()
-                    .transition(.move(edge: .bottom))
+                    .transition(.moveWithOpacity)
             }
         }
     }
