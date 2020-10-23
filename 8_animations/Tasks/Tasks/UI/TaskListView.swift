@@ -35,7 +35,7 @@ struct TaskListView: View {
             }
             
             VStack(alignment: HorizontalAlignment.leading ) {
-                ForEach(taskManager.taskList) { task in
+                ForEach(taskManager.taskList.sorted(by: { $0.name < $1.name })) { task in
                     TaskCell(task: task)
                         .onTapGesture {
                             userTappedTask(task)
@@ -48,8 +48,10 @@ struct TaskListView: View {
     
     func createNewTask() {
         if newTaskName.count > 0 {
-            taskManager.addTask(withName: newTaskName)
-            newTaskName = ""
+            withAnimation {
+                taskManager.addTask(withName: newTaskName)
+                newTaskName = ""
+            }
         }
     }
     
