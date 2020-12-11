@@ -10,6 +10,7 @@ import SwiftUI
 struct Ecran2: View {
     var body: some View {
         Text("Ecran 2")
+            .navigationTitle("Ecran 2")
     }
 }
 
