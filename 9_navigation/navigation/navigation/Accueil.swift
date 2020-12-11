@@ -11,6 +11,7 @@ struct Accueil: View {
     @State var motDePasseSaisi = ""
     @State var motDePasseValide = false
     @State var doitSelectionnerContact = false
+    @State var contactSelectionne:String? = nil
     var body: some View {
         VStack {
             Group {
@@ -37,12 +38,14 @@ struct Accueil: View {
                     })
                 
                 //Vue modale
-                Button("Selectionner contact \(doitSelectionnerContact.description)") {
+                Button("Selectionner contact") {
                     doitSelectionnerContact.toggle()
-                }.sheet(isPresented: $doitSelectionnerContact, content: {
-                    ListeContacts()
+                }.popover(isPresented: $doitSelectionnerContact, content: {
+                    ListeContacts(doitChoisirContact: $doitSelectionnerContact, contactChoisi: $contactSelectionne)
                 })
-                
+                if let contact = contactSelectionne {
+                    Text(contact)
+                }
                 
             }.padding(EdgeInsets(top: 2, leading: 0, bottom: 2, trailing: 0))
         }.padding()
@@ -60,8 +63,14 @@ struct Accueil: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            Accueil()
+        Group {
+            NavigationView {
+                Accueil()
+            }
+            .previewDevice("iPad Pro (9.7-inch)")
+            NavigationView {
+                Accueil()
+            }
         }
     }
 }
