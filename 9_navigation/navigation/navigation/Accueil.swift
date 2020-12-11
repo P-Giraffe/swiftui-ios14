@@ -12,6 +12,8 @@ struct Accueil: View {
         VStack {
             Text("Bienvenue dans votre app")
         }.padding()
+        .navigationTitle("Accueil")
+        
     }
 }
 
