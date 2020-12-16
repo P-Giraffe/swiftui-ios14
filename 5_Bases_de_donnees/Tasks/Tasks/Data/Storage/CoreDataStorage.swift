@@ -83,7 +83,3 @@ extension Task {
         self.isDone = coreDataObject.isDone
     }
 }
-
-class RealmTask: Object {
-    <#code#>
-}
