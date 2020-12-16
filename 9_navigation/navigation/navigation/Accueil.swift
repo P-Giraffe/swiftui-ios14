@@ -12,6 +12,7 @@ struct Accueil: View {
     @State var motDePasseValide = false
     @State var doitSelectionnerContact = false
     @State var contactSelectionne:String? = nil
+    @State var afficherConfirmation = false
     var body: some View {
         VStack {
             Group {
@@ -45,11 +46,27 @@ struct Accueil: View {
                 })
                 if let contact = contactSelectionne {
                     Text(contact)
+                    //Alertes et ActionSheets
+                    Button("Supprimer le contact") {
+                        afficherConfirmation.toggle()
+                    }.alert(isPresented: $afficherConfirmation, content: {
+                        Alert(title: Text("Voulez-vous vraiment effacer ce contact ?"),
+                                    message: Text("Vous ne pourrez pas annuler cette action plus tard"),
+                                    primaryButton:.destructive(Text("Supprimer \(contact)"), action: effectuerLaSuppression),
+                                    secondaryButton: .cancel()
+                        )
+                    })
                 }
+                
+                
                 
             }.padding(EdgeInsets(top: 2, leading: 0, bottom: 2, trailing: 0))
         }.padding()
         .navigationTitle("Accueil")
+    }
+    
+    func effectuerLaSuppression() {
+        
     }
     
     func boutonSecretTouché() {
