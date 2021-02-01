@@ -5,6 +5,7 @@ Abstract:
 A view that shows the details of a character.
 */
 import SwiftUI
+import WidgetKit
 
 struct DetailView: View {
     
@@ -32,13 +33,18 @@ struct DetailView: View {
                         .background(
                             RoundedRectangle(cornerRadius: 20, style: .continuous)
                                 .fill(Color.gameBackground))
+                    
                 }
-
+                
                 VStack(alignment: .leading, spacing: 16) {
                     Text("About \(character.name)")
                         .font(.title)
                     Text("\(character.bio)")
                         .font(.title2)
+                    Button("Booster le ranger") {
+                        //modifier les données
+                        WidgetCenter.shared.reloadAllTimelines()
+                    }
                 }
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
                 .padding()

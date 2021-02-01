@@ -41,22 +41,9 @@ struct Accueil: View {
                 //Vue modale
                 Button("Selectionner contact") {
                     doitSelectionnerContact.toggle()
-                }.popover(isPresented: $doitSelectionnerContact, content: {
+                }.fullScreenCover(isPresented: $doitSelectionnerContact, content: {
                     ListeContacts(doitChoisirContact: $doitSelectionnerContact, contactChoisi: $contactSelectionne)
                 })
-                if let contact = contactSelectionne {
-                    Text(contact)
-                    //Alertes et ActionSheets
-                    Button("Supprimer le contact") {
-                        afficherConfirmation.toggle()
-                    }.alert(isPresented: $afficherConfirmation, content: {
-                        Alert(title: Text("Voulez-vous vraiment effacer ce contact ?"),
-                                    message: Text("Vous ne pourrez pas annuler cette action plus tard"),
-                                    primaryButton:.destructive(Text("Supprimer \(contact)"), action: effectuerLaSuppression),
-                                    secondaryButton: .cancel()
-                        )
-                    })
-                }
                 
                 
                 
