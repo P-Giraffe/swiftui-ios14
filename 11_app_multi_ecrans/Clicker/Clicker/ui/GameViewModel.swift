@@ -9,19 +9,22 @@ import Foundation
 
 class GameViewModel : ObservableObject {
     @Published var gameManager = GameManager()
-    @Published var shouldDisplayLoginView:Bool
+    @Published var shouldDisplayLoginView:Bool = false
     @Published var score = 0
     @Published var gameIsInProgress = false
     
-    let userManager:UserManager
+    private var _userManager:UserManager?
     
-    init(userManager:UserManager) {
-        self.userManager = userManager
-        shouldDisplayLoginView = userManager.currentUser == nil
+    var userManager:UserManager? {
+        get { _userManager }
+        set {
+            _userManager = newValue
+            shouldDisplayLoginView = newValue?.currentUser == nil
+        }
     }
     
     func logout() {
-        userManager.logout()
+        userManager?.logout()
         shouldDisplayLoginView = true
     }
     
@@ -54,7 +57,7 @@ class GameViewModel : ObservableObject {
     func gameDidFinish() {
         objectWillChange.send()
         gameIsInProgress = false
-        if let nickname = self.userManager.currentUser?.nickname {
+        if let nickname = self.userManager?.currentUser?.nickname {
             gameManager.gameDidFinish(username: nickname, score: score)
         }
     }

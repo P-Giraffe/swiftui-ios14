@@ -12,18 +12,14 @@ class LoginViewModel : ObservableObject {
     @Published var typedPassword:String = ""
     @Published var errorMessage:String?
     
-    private let userManager:UserManager
-    
-    init(userManager:UserManager) {
-        self.userManager = userManager
-    }
+    var userManager:UserManager?
     
     func submitCredentials(loginResult:@escaping (Bool)->Void) {
         guard typedUsername.isEmpty == false && typedPassword.isEmpty == false else {
             errorMessage = NSLocalizedString("Please type a username and a password before trying to login", comment: "")
             return
         }
-        userManager.loginUser(identifier: typedUsername, password: typedPassword) { (result) in
+        userManager?.loginUser(identifier: typedUsername, password: typedPassword) { (result) in
             switch result {
             case .success(_):
                 self.errorMessage = nil

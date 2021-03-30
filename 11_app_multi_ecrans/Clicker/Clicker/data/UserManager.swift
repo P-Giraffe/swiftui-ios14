@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UserManager {
+class UserManager:ObservableObject {
     private let webservice:RemoteDataManager
     var currentUser:User?
     

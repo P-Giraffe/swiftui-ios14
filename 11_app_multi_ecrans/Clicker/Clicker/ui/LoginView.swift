@@ -8,13 +8,10 @@
 import SwiftUI
 
 struct LoginView: View {
-    @ObservedObject var viewModel:LoginViewModel
+    @ObservedObject var userManager:UserManager
+    @StateObject var viewModel = LoginViewModel()
     @Binding var shouldDisplayLoginView:Bool
-    
-    init(userManager:UserManager, credentialsAreAccepted:Binding<Bool>) {
-        self._shouldDisplayLoginView = credentialsAreAccepted
-        viewModel = LoginViewModel(userManager: userManager)
-    }
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("Clicker")
@@ -48,11 +45,15 @@ struct LoginView: View {
             Spacer()
         }
         .padding()
+        .onAppear() {
+            viewModel.userManager = userManager
+        }
     }
+    
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(userManager: UserManager(webservice: RemoteDataManager(webserviceBaseUrl: "")), credentialsAreAccepted: .constant(false))
+        LoginView(userManager: UserManager(webservice: RemoteDataManager(webserviceBaseUrl: "")), shouldDisplayLoginView: .constant(false))
     }
 }

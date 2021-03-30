@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct GameView: View {
-    @ObservedObject var viewModel:GameViewModel
-    
-    init(userManager:UserManager) {
-        self.viewModel = GameViewModel(userManager: userManager)
-    }
+    @ObservedObject var userManager:UserManager
+    @StateObject var viewModel = GameViewModel()
     
     var body: some View {
         VStack {
@@ -50,8 +47,11 @@ struct GameView: View {
             leading:NavigationLink("Settings", destination: SettingsView()) ,
             trailing: Button("Logout", action: viewModel.logout))
         .fullScreenCover(isPresented: $viewModel.shouldDisplayLoginView, content: {
-            LoginView(userManager: viewModel.userManager, credentialsAreAccepted: $viewModel.shouldDisplayLoginView)
+            LoginView(userManager: userManager, shouldDisplayLoginView: $viewModel.shouldDisplayLoginView)
         })
+        .onAppear() {
+            viewModel.userManager = userManager
+        }
         
     }
     
@@ -61,7 +61,7 @@ struct GameView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            GameView(userManager: UserManager(webservice: RemoteDataManager(webserviceBaseUrl: "")))
+            GameView(userManager:UserManager(webservice: RemoteDataManager(webserviceBaseUrl: "")))
         }
     }
 }
